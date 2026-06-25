@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>I'm Sorry ❤️</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,6 +15,7 @@
       margin: 0;
       background: #ffe6eb;
       text-align: center;
+      overflow: hidden;
     }
 
     .box {
@@ -38,24 +40,54 @@
     }
 
     #noBtn {
-      background: #ccc;
-      color: #666;
-      cursor: not-allowed;
+      background: #f44336;
+      color: white;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: #e91e63;
+      font-weight: bold;
+      min-height: 20px;
     }
   </style>
 </head>
 <body>
+
   <div class="box" id="content">
-    <h2>Please accept my Apology ❤️</h2>
+    <h2>Please accept my apology ❤️</h2>
+
     <button id="yesBtn" onclick="acceptApology()">Yes</button>
-    <button id="noBtn" disabled>No</button>
+    <button id="noBtn" onmouseover="moveNoButton()">
+      No
+    </button>
+
+    <div id="message"></div>
   </div>
 
   <script>
     function acceptApology() {
       document.getElementById("content").innerHTML =
-        "<h1>THANKS ❤️</h1>";
+        "<h1>THANKS ❤️</h1><h3>You made my day! 😊</h3>";
+    }
+
+    function moveNoButton() {
+      const btn = document.getElementById("noBtn");
+      const message = document.getElementById("message");
+
+      message.innerHTML = "Not Possible 😄";
+
+      const maxX = window.innerWidth - btn.offsetWidth - 20;
+      const maxY = window.innerHeight - btn.offsetHeight - 20;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      btn.style.position = "absolute";
+      btn.style.left = randomX + "px";
+      btn.style.top = randomY + "px";
     }
   </script>
+
 </body>
 </html>
