@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Sorry ❤️</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #ffe6eb;
+      text-align: center;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background: #4CAF50;
+      color: white;
+    }
+
+    #noBtn {
+      background: #ccc;
+      color: #666;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="content">
+    <h2>Please accept my Apology ❤️</h2>
+    <button id="yesBtn" onclick="acceptApology()">Yes</button>
+    <button id="noBtn" disabled>No</button>
+  </div>
+
+  <script>
+    function acceptApology() {
+      document.getElementById("content").innerHTML =
+        "<h1>THANKS ❤️</h1>";
+    }
+  </script>
+</body>
+</html>
